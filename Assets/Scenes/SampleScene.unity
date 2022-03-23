@@ -2500,6 +2500,10 @@ PrefabInstance:
       propertyPath: path.Array.data[6]
       value: 
       objectReference: {fileID: 2081308863}
+    - target: {fileID: 1422485418203571051, guid: 3e381af64243e1046a3e752b55813b71, type: 3}
+      propertyPath: distanceToDestination
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1422485418203571061, guid: 3e381af64243e1046a3e752b55813b71, type: 3}
       propertyPath: m_Name
       value: Enemy
