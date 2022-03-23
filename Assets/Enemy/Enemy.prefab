@@ -47,14 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a8a70b4914e504baa613a3a2622d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  path: []
   waitTime: 1
   distanceToDestination: 1
   speed: 1
@@ -105,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90583270873d8ab4ebc6ec6ab21243d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
+  currentHealthPoints: 0
 --- !u!1001 &1422485420160190513
 PrefabInstance:
   m_ObjectHideFlags: 0
