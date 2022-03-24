@@ -5,11 +5,10 @@ using UnityEngine;
 public class TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform weapon;
-    [SerializeField] Transform target;
+    [SerializeField] Transform currentTarget;
 
     private void Start()
     {
-        target = FindObjectOfType<EnemyMover>().transform;
         foreach(Transform t in GetComponentInChildren<Transform>())
         {
             if(t.name.Equals("BallistaTopMesh"))
@@ -22,9 +21,20 @@ public class TargetLocator : MonoBehaviour
     private void Update()
     {
         AimWeapon();
+        if(currentTarget == null)
+        {
+            foreach(EnemyHealth enemy in FindObjectsOfType<EnemyHealth>())
+            {
+                if(enemy.isAlive())
+                {
+                    currentTarget = enemy.gameObject.transform;
+                    AimWeapon();
+                }
+            }
+        }
     }
     void AimWeapon()
     {
-        weapon.LookAt(target);
+        weapon.LookAt(currentTarget);
     }
 }

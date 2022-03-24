@@ -28,4 +28,8 @@ public class EnemyHealth : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    public bool isAlive()
+    {
+        return currentHealthPoints > 0;
+    }
 }
