@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  target: {fileID: 0}
+  currentTarget: {fileID: 0}
 --- !u!1 &6131056645070147807
 GameObject:
   m_ObjectHideFlags: 0

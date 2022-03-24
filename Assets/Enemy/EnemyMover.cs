@@ -11,7 +11,7 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] [Range(0, 5f)]float speed = 1f;
     //NavMeshAgent agent;
     Vector3 currentPosition;
-    private void Start()
+    private void OnEnable()
     {
         //agent = GetComponent<NavMeshAgent>();
         FindPath();
@@ -46,7 +46,7 @@ public class EnemyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void UseAgentNav(Waypoint waypoint)

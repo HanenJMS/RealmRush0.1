@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int health = 5;
     [SerializeField] int currentHealthPoints = 0;
-    private void Start()
+    private void OnEnable()
     {
         currentHealthPoints = health;
     }
@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealthPoints--;
         if (currentHealthPoints <= 0)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
     public bool isAlive()
