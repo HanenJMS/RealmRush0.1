@@ -9,6 +9,7 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] float waitTime = 1f;
     [SerializeField] float distanceToDestination = 1f;
     [SerializeField] [Range(0, 5f)]float speed = 1f;
+    Enemy enemy;
     //NavMeshAgent agent;
     Vector3 currentPosition;
     private void OnEnable()
@@ -17,6 +18,10 @@ public class EnemyMover : MonoBehaviour
         FindPath();
         ReturnToStart();
         StartCoroutine(FollowPath());
+    }
+    private void Start()
+    {
+        enemy = GetComponent<Enemy>();
     }
     void FindPath()
     {
@@ -46,6 +51,7 @@ public class EnemyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+        enemy.GoldPenalty();
         gameObject.SetActive(false);
     }
 

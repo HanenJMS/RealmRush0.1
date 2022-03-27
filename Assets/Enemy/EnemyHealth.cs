@@ -6,15 +6,15 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int health = 5;
     [SerializeField] int currentHealthPoints = 0;
+    Enemy enemy;
     private void OnEnable()
     {
         currentHealthPoints = health;
     }
-    private void Update()
+    private void Start()
     {
-        
+        enemy = GetComponent<Enemy>();
     }
-
     private void OnParticleCollision(GameObject other)
     {
         TakeDamage();
@@ -25,11 +25,12 @@ public class EnemyHealth : MonoBehaviour
         currentHealthPoints--;
         if (currentHealthPoints <= 0)
         {
+            IsDying();
             gameObject.SetActive(false);
         }
     }
-    public bool isAlive()
+    void IsDying()
     {
-        return currentHealthPoints > 0;
+        enemy.GoldReward();
     }
 }
